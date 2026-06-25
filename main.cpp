@@ -49,8 +49,6 @@ void loop() {
   // Get a single reading and a 10-sample average for Serial analysis
   float singleReading = scale.get_units(1);
   float averageReading = scale.get_units(10);
-  
-  // Zero-snapping: Hide microscopic drift for the LCD when empty
   float displayVal = averageReading;
   if (displayVal < 0.0 && displayVal > -0.2) {
     displayVal = 0.0;
